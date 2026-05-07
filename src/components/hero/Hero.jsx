@@ -2,38 +2,54 @@
 
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Hero() {
   return (
-    <motion.nav
-      initial={{ y: -80, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.8 }}
-      className="fixed top-0 left-0 w-full z-50
-      backdrop-blur-md bg-black/20 border-b border-white/10"
-    >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-wide">
-          Campesino Coffee
+    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop')",
+        }}
+      />
+
+      <div className="absolute inset-0 bg-black/60" />
+
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        className="relative z-10 text-center px-6 max-w-4xl"
+      >
+        <p className="uppercase tracking-[0.4em] text-sm text-[#C08B5C] mb-6">
+          Houston • Latin American Coffee Experience
+        </p>
+
+        <h1 className="text-5xl md:text-7xl font-bold leading-tight mb-6">
+          Campesino <br />
+          Coffee House
         </h1>
 
-        <div className="hidden md:flex gap-8 text-sm uppercase tracking-wider">
-          <a href="#about" className="hover:text-[#C08B5C] transition">
-            About
+        <p className="text-zinc-300 text-lg mb-10">
+          Cozy handcrafted coffee experience inspired by Latin American culture,
+          artisan flavors, and community.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#menu">
+            <button className="px-8 py-4 bg-[#C08B5C] text-black font-semibold rounded-full hover:scale-105 transition">
+              View Menu
+            </button>
           </a>
 
-          <a href="#menu" className="hover:text-[#C08B5C] transition">
-            Menu
-          </a>
-
-          <a href="#gallery" className="hover:text-[#C08B5C] transition">
-            Gallery
-          </a>
-
-          <a href="#contact" className="hover:text-[#C08B5C] transition">
-            Contact
+          <a href="#location">
+            <button className="px-8 py-4 border border-white/20 backdrop-blur-md rounded-full hover:bg-white/10 transition">
+              Visit Cafe
+            </button>
           </a>
         </div>
-      </div>
-    </motion.nav>
+      </motion.div>
+    </section>
   );
 }

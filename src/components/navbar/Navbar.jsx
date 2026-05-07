@@ -12,9 +12,12 @@ export default function Navbar() {
       backdrop-blur-md bg-black/20 border-b border-white/10"
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <h1 className="text-2xl font-bold tracking-wide">
+        <a
+          href="#"
+          className="text-2xl font-bold tracking-wide hover:text-[#C08B5C] transition"
+        >
           Campesino Coffee
-        </h1>
+        </a>
 
         <div className="hidden md:flex gap-8 text-sm uppercase tracking-wider">
           <a href="#about" className="hover:text-[#C08B5C] transition">
